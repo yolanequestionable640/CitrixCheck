@@ -1,0 +1,25 @@
+# Encrypted key files (contain AES keys tied to your installation)
+smtp_key.bin
+ns_key.bin
+xen_key.bin
+
+# Generated reports and logs (directories are preserved via .gitkeep)
+reports/*
+!reports/.gitkeep
+logs/*
+!logs/.gitkeep
+
+# config.json is included with placeholder values — fill in your own after cloning
+# Encrypted passwords are written by Initialize-CitrixCheck.ps1 and should not be committed
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Claude Code local settings
+.claude/
+
+# Editors
+.vscode/
+.idea/
+*.swp

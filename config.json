@@ -1,0 +1,279 @@
+{
+  "Email": {
+    "To": "citrix-reports@example.com",
+    "From": "svc-citrix@example.com",
+    "SmtpServer": "10.0.0.10",
+    "SmtpPort": 25,
+    "UseSSL": false,
+    "Priority": "Low",
+    "EnvironmentName": "YourOrganisation - PRD",
+    "Subject": "Citrix Daily Infrastructure Report - YourOrganisation - PRD - {date}",
+    "SmtpUsername": "svc-citrix@example.com",
+    "SmtpPassword": "<run setup: see Invoke-DailyReport.ps1 notes>",
+    "SmtpKeyFile": "smtp_key.bin"
+  },
+  "CVAD": {
+    "PrimaryController": "CTX-DDC01.ad.example.com",
+    "FallbackController": "CTX-DDC02.ad.example.com"
+  },
+  "LicenseServer": "CTX-LIC01.ad.example.com",
+  "DiskDriveFilter": ["C:", "D:"],
+  "Thresholds": {
+    "DiskSpaceWarningPercent": 20,
+    "DiskSpaceCriticalPercent": 10,
+    "LicenseUsageWarningPercent": 85,
+    "LicenseUsageCriticalPercent": 95,
+    "SSLCertExpiryWarningDays": 30,
+    "SSLCertExpiryCriticalDays": 7,
+    "IdleSessionWarningMinutes": 480,
+    "LogonDurationWarningSeconds": 60
+  },
+  "Servers": [
+    {
+      "Name": "CTX-DDC01.ad.example.com",
+      "Role": "Delivery Controller",
+      "Services": [
+        "Citrix AD Identity Service",
+        "Citrix Analytics Service",
+        "Citrix App Library Service",
+        "Citrix Broker Service",
+        "Citrix Config Synchronizer Service",
+        "Citrix Configuration Logging Service",
+        "Citrix Configuration Service",
+        "Citrix Delegated Administration Service",
+        "Citrix Environment Test Service",
+        "Citrix High Availability Service",
+        "Citrix Host Service",
+        "Citrix Machine Creation Service",
+        "Citrix Monitor Service",
+        "Citrix Orchestration Service",
+        "Citrix Storefront Privileged Administration Service",
+        "Citrix Storefront Service",
+        "Citrix Telemetry Service",
+        "Citrix Trust Service"
+      ]
+    },
+    {
+      "Name": "CTX-DDC02.ad.example.com",
+      "Role": "Delivery Controller",
+      "Services": [
+        "Citrix AD Identity Service",
+        "Citrix Analytics Service",
+        "Citrix App Library Service",
+        "Citrix Broker Service",
+        "Citrix Config Synchronizer Service",
+        "Citrix Configuration Logging Service",
+        "Citrix Configuration Service",
+        "Citrix Delegated Administration Service",
+        "Citrix Environment Test Service",
+        "Citrix High Availability Service",
+        "Citrix Host Service",
+        "Citrix Machine Creation Service",
+        "Citrix Monitor Service",
+        "Citrix Orchestration Service",
+        "Citrix Storefront Privileged Administration Service",
+        "Citrix Storefront Service",
+        "Citrix Telemetry Service",
+        "Citrix Trust Service"
+      ]
+    },
+    {
+      "Name": "CTX-DDC03.ad.example.com",
+      "Role": "Delivery Controller",
+      "Services": [
+        "Citrix AD Identity Service",
+        "Citrix Analytics Service",
+        "Citrix App Library Service",
+        "Citrix Broker Service",
+        "Citrix Config Synchronizer Service",
+        "Citrix Configuration Logging Service",
+        "Citrix Configuration Service",
+        "Citrix Delegated Administration Service",
+        "Citrix Environment Test Service",
+        "Citrix High Availability Service",
+        "Citrix Host Service",
+        "Citrix Machine Creation Service",
+        "Citrix Monitor Service",
+        "Citrix Orchestration Service",
+        "Citrix Storefront Privileged Administration Service",
+        "Citrix Storefront Service",
+        "Citrix Telemetry Service",
+        "Citrix Trust Service"
+      ]
+    },
+    {
+      "Name": "CTX-SF01.ad.example.com",
+      "Role": "StoreFront",
+      "Services": [
+        "Citrix Configuration Replication",
+        "Citrix Credential Wallet",
+        "Citrix Default Domain Services",
+        "Citrix Infra Monitor Service",
+        "Citrix Peer Resolution Service",
+        "Citrix Service Monitor",
+        "Citrix StoreFront Telemetry Service",
+        "Citrix Subscriptions Store",
+        "Citrix Telemetry Service"
+      ]
+    },
+    {
+      "Name": "CTX-SF02.ad.example.com",
+      "Role": "StoreFront",
+      "Services": [
+        "Citrix Configuration Replication",
+        "Citrix Credential Wallet",
+        "Citrix Default Domain Services",
+        "Citrix Infra Monitor Service",
+        "Citrix Peer Resolution Service",
+        "Citrix Service Monitor",
+        "Citrix StoreFront Telemetry Service",
+        "Citrix Subscriptions Store",
+        "Citrix Telemetry Service"
+      ]
+    },
+    {
+      "Name": "CTX-LIC01.ad.example.com",
+      "Role": "License Server",
+      "Services": [
+        "Citrix Licensing",
+        "Citrix Licensing Support Service",
+        "Citrix Licensing WMI",
+        "Citrix Web Services for Licensing"
+      ]
+    },
+    {
+      "Name": "CTX-PVS01.ad.example.com",
+      "Role": "Provisioning Services",
+      "DiskDriveFilter": ["C:", "D:", "F:"],
+      "Services": [
+        "Citrix PVS API Service",
+        "Citrix PVS Soap Server",
+        "Citrix PVS Stream Service",
+        "Citrix PVS Two-Stage Boot Service",
+        "Citrix Telemetry Service"
+      ]
+    },
+    {
+      "Name": "CTX-PVS02.ad.example.com",
+      "Role": "Provisioning Services",
+      "DiskDriveFilter": ["C:", "D:", "F:"],
+      "Services": [
+        "Citrix PVS API Service",
+        "Citrix PVS Soap Server",
+        "Citrix PVS Stream Service",
+        "Citrix PVS Two-Stage Boot Service",
+        "Citrix Telemetry Service"
+      ]
+    },
+    {
+      "Name": "CTX-PVS03.ad.example.com",
+      "Role": "Provisioning Services",
+      "DiskDriveFilter": ["C:", "D:", "F:"],
+      "Services": [
+        "Citrix PVS API Service",
+        "Citrix PVS Soap Server",
+        "Citrix PVS Stream Service",
+        "Citrix PVS Two-Stage Boot Service",
+        "Citrix Telemetry Service"
+      ]
+    },
+    {
+      "Name": "CTX-PVS04.ad.example.com",
+      "Role": "Provisioning Services",
+      "DiskDriveFilter": ["C:", "D:", "F:"],
+      "Services": [
+        "Citrix PVS API Service",
+        "Citrix PVS Soap Server",
+        "Citrix PVS Stream Service",
+        "Citrix PVS Two-Stage Boot Service",
+        "Citrix Telemetry Service"
+      ]
+    },
+    {
+      "Name": "CTX-FAS01.ad.example.com",
+      "Role": "Federated Authentication Service",
+      "Services": [
+        "Citrix Federated Authentication Service"
+      ]
+    },
+    {
+      "Name": "CTX-FAS02.ad.example.com",
+      "Role": "Federated Authentication Service",
+      "Services": [
+        "Citrix Federated Authentication Service"
+      ]
+    }
+  ],
+  "PVS": {
+    "PrimaryServer": "CTX-PVS01.ad.example.com",
+    "Servers": [
+      "CTX-PVS01.ad.example.com",
+      "CTX-PVS02.ad.example.com",
+      "CTX-PVS03.ad.example.com",
+      "CTX-PVS04.ad.example.com"
+    ]
+  },
+  "FAS": {
+    "Servers": [
+      "CTX-FAS01.ad.example.com",
+      "CTX-FAS02.ad.example.com"
+    ]
+  },
+  "NetScaler": [
+    {
+      "Name": "CTX-NS-EXT",
+      "HostName": "192.168.1.100",
+      "Protocol": "https",
+      "SkipCertificateCheck": true
+    },
+    {
+      "Name": "CTX-NS-INT",
+      "HostName": "10.0.0.51",
+      "Protocol": "https",
+      "SkipCertificateCheck": true
+    },
+    {
+      "Name": "CTX-NS-LB",
+      "HostName": "10.0.0.66",
+      "Protocol": "https",
+      "SkipCertificateCheck": true
+    }
+  ],
+  "NetScalerCredentials": {
+    "Username": "<run Initialize-CitrixCheck.ps1>",
+    "EncryptedPassword": "<run Initialize-CitrixCheck.ps1>",
+    "NsKeyFile": "ns_key.bin"
+  },
+  "XenServer": {
+    "Pools": [
+      { "Name": "XEN-POOL-01",    "Master": "ctx-xen01.ad.example.com" },
+      { "Name": "XEN-POOL-02",    "Master": "ctx-xen02.ad.example.com" },
+      { "Name": "XEN-POOL-03",   "Master": "ctx-xen03.ad.example.com" },
+      { "Name": "XEN-POOL-04",  "Master": "ctx-xen04.ad.example.com" },
+      { "Name": "XEN-POOL-05",  "Master": "ctx-xen05.ad.example.com" },
+      { "Name": "XEN-POOL-06",  "Master": "ctx-xen06.ad.example.com" },
+      { "Name": "XEN-POOL-07",   "Master": "ctx-xen07.ad.example.com" },
+      { "Name": "XEN-POOL-08",  "Master": "ctx-xen08.ad.example.com" },
+      { "Name": "XEN-POOL-09", "Master": "ctx-xen09.ad.example.com" },
+      { "Name": "XEN-POOL-10", "Master": "ctx-xen10.ad.example.com" },
+      { "Name": "XEN-POOL-11", "Master": "ctx-xen11.ad.example.com" },
+      { "Name": "XEN-POOL-12", "Master": "ctx-xen12.ad.example.com" },
+      { "Name": "XEN-POOL-13", "Master": "ctx-xen13.ad.example.com" },
+      { "Name": "XEN-POOL-14", "Master": "ctx-xen14.ad.example.com" },
+      { "Name": "XEN-POOL-15",    "Master": "ctx-xen15.ad.example.com" }
+    ],
+    "Username": "<run Initialize-CitrixCheck.ps1>",
+    "EncryptedPassword": "<run Initialize-CitrixCheck.ps1>",
+    "XenKeyFile": "xen_key.bin",
+    "ModulePath": "C:\\Program Files\\WindowsPowerShell\\Modules\\XenServerPSModule\\XenServerPSModule.psd1",
+    "Thresholds": {
+      "CpuWarningPercent": 80,
+      "CpuCriticalPercent": 90,
+      "MemoryWarningPercent": 85,
+      "MemoryCriticalPercent": 95,
+      "StorageWarningPercent": 80,
+      "StorageCriticalPercent": 90,
+      "UptimeWarningDays": 30
+    }
+  }
+}

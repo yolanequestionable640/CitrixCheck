@@ -1,0 +1,14 @@
+# Normalize line endings
+* text=auto
+
+# PowerShell scripts — keep CRLF on Windows checkouts
+*.ps1 text eol=crlf
+*.psm1 text eol=crlf
+*.psd1 text eol=crlf
+
+# Data files
+*.json text eol=lf
+
+# Docs
+*.md text eol=lf
+LICENSE text eol=lf
