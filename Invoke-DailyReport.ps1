@@ -674,8 +674,9 @@ try {
                       else { 'Normal' }
 
     # Eenvoudige e-mailtekst — volledig rapport zit als bijlage
-    $statusColor = if ($checksWithIssues -gt 0) { '#e74c3c' } else { '#27ae60' }
-    $statusLabel = if ($checksWithIssues -gt 0) { "ATTENTION REQUIRED — $issueCount check(s) with issues" } else { 'ALL OK' }
+    # Gebruik dezelfde kleur/tekst als de rapport-header (groen/oranje/rood)
+    $statusColor = $headerColour
+    $statusLabel = if ($checksWithIssues -eq 0) { 'ALL OK' } elseif ($checksWithIssues -le 2) { "ATTENTION RECOMMENDED — $checksWithIssues check(s) with issues" } else { "ATTENTION REQUIRED — $checksWithIssues check(s) with issues" }
     $checkRows   = ($results | ForEach-Object {
         $isInfoRow = $_.PSObject.Properties['SectionKey'] -and $_.SectionKey -in $infoOnlyKeys
         $ico = if ($_.HasIssues -and -not $isInfoRow) { "<span style='color:#e74c3c'>&#10008; $($_.IssueCount) issue(s)</span>" } else { "<span style='color:#27ae60'>&#10004; OK</span>" }
